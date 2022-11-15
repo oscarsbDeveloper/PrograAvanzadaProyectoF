@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gamestorecrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AYUDA_CLIENTES">
+    <Key>
+      <PropertyRef Name="ID_AYUDA" />
+    </Key>
+    <Property Name="ID_AYUDA" Type="int" Nullable="false" />
+    <Property Name="TITULO_ASUNTO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MENSAJE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CATALOGO_ACCESORIOS">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO_ACCESORIO" />
+    </Key>
+    <Property Name="ID_CATALOGO_ACCESORIO" Type="int" Nullable="false" />
+    <Property Name="NOM_ACCESORIO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="MARCA" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="PRECIO_ACCESORIO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CATALOGO_CONSOLAS">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO_CONSOLA" />
+    </Key>
+    <Property Name="ID_CATALOGO_CONSOLA" Type="int" Nullable="false" />
+    <Property Name="NOM_CONSOLA" Type="varchar" MaxLength="15" />
+    <Property Name="MARCA" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="PRECIO_CONSOLA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CATALOGO_JUEGOS">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO_JUEGO" />
+    </Key>
+    <Property Name="ID_CATALOGO_JUEGO" Type="int" Nullable="false" />
+    <Property Name="NOM_JUEGO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CATEGORIA" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="PLATAFORMA" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="PRECIO_JUEGO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CLIENTES">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="NOM_CLIENTE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="APELLIDO_CLIENTE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="EMPLEADOS">
+    <Key>
+      <PropertyRef Name="ID_EMPLEADO" />
+    </Key>
+    <Property Name="ID_EMPLEADO" Type="int" Nullable="false" />
+    <Property Name="NOM_EMPLEADO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="APELLIDO_EMPLEADO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PUESTO" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURAS" />
+    </Key>
+    <Property Name="ID_FACTURAS" Type="int" Nullable="false" />
+    <Property Name="NUM_FACTURA" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_EMPLEADO" Type="int" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+    <Property Name="ID_VENTA" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NOSOTROS">
+    <Key>
+      <PropertyRef Name="ID_NOSOTROS" />
+    </Key>
+    <Property Name="ID_NOSOTROS" Type="int" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_EMPLEADO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NOTICIAS">
+    <Key>
+      <PropertyRef Name="ID_NOTICIAS" />
+    </Key>
+    <Property Name="ID_NOTICIAS" Type="int" Nullable="false" />
+    <Property Name="TITULO" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+    <Property Name="TIPO_PRODUCTO" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="PLATAFORMA" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="VENTAS">
+    <Key>
+      <PropertyRef Name="ID_VENTA" />
+    </Key>
+    <Property Name="ID_VENTA" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="MONTO" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+    <Property Name="ID_EMPLEADO" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AYUDA_CLI__ID_CL__3B75D760">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+    <End Role="AYUDA_CLIENTES" Type="Self.AYUDA_CLIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="AYUDA_CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CATALOGO___ID_PR__38996AB5">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="CATALOGO_ACCESORIOS" Type="Self.CATALOGO_ACCESORIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="CATALOGO_ACCESORIOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CATALOGO___ID_PR__398D8EEE">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="CATALOGO_JUEGOS" Type="Self.CATALOGO_JUEGOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="CATALOGO_JUEGOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CATALOGO___ID_PR__3A81B327">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="CATALOGO_CONSOLAS" Type="Self.CATALOGO_CONSOLAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="CATALOGO_CONSOLAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_CLI__3C69FB99">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_EMP__3D5E1FD2">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_PRO__3E52440B">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_VEN__3F466844">
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENTAS">
+        <PropertyRef Name="ID_VENTA" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_VENTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NOSOTROS__ID_EMP__4316F928">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="NOSOTROS" Type="Self.NOSOTROS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Principal>
+      <Dependent Role="NOSOTROS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NOTICIAS__ID_PRO__37A5467C">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="NOTICIAS" Type="Self.NOTICIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="NOTICIAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__ID_CLIEN__403A8C7D">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__ID_EMPLE__4222D4EF">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__ID_PRODU__412EB0B6">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gamestorecrModelStoreContainer">
+    <EntitySet Name="AYUDA_CLIENTES" EntityType="Self.AYUDA_CLIENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATALOGO_ACCESORIOS" EntityType="Self.CATALOGO_ACCESORIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATALOGO_CONSOLAS" EntityType="Self.CATALOGO_CONSOLAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CATALOGO_JUEGOS" EntityType="Self.CATALOGO_JUEGOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOSOTROS" EntityType="Self.NOSOTROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NOTICIAS" EntityType="Self.NOTICIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VENTAS" EntityType="Self.VENTAS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AYUDA_CLI__ID_CL__3B75D760" Association="Self.FK__AYUDA_CLI__ID_CL__3B75D760">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="AYUDA_CLIENTES" EntitySet="AYUDA_CLIENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CATALOGO___ID_PR__38996AB5" Association="Self.FK__CATALOGO___ID_PR__38996AB5">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="CATALOGO_ACCESORIOS" EntitySet="CATALOGO_ACCESORIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CATALOGO___ID_PR__398D8EEE" Association="Self.FK__CATALOGO___ID_PR__398D8EEE">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="CATALOGO_JUEGOS" EntitySet="CATALOGO_JUEGOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CATALOGO___ID_PR__3A81B327" Association="Self.FK__CATALOGO___ID_PR__3A81B327">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="CATALOGO_CONSOLAS" EntitySet="CATALOGO_CONSOLAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_CLI__3C69FB99" Association="Self.FK__FACTURAS__ID_CLI__3C69FB99">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_EMP__3D5E1FD2" Association="Self.FK__FACTURAS__ID_EMP__3D5E1FD2">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_PRO__3E52440B" Association="Self.FK__FACTURAS__ID_PRO__3E52440B">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_VEN__3F466844" Association="Self.FK__FACTURAS__ID_VEN__3F466844">
+      <End Role="VENTAS" EntitySet="VENTAS" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NOSOTROS__ID_EMP__4316F928" Association="Self.FK__NOSOTROS__ID_EMP__4316F928">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="NOSOTROS" EntitySet="NOSOTROS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NOTICIAS__ID_PRO__37A5467C" Association="Self.FK__NOTICIAS__ID_PRO__37A5467C">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="NOTICIAS" EntitySet="NOTICIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__ID_CLIEN__403A8C7D" Association="Self.FK__VENTAS__ID_CLIEN__403A8C7D">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__ID_EMPLE__4222D4EF" Association="Self.FK__VENTAS__ID_EMPLE__4222D4EF">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__ID_PRODU__412EB0B6" Association="Self.FK__VENTAS__ID_PRODU__412EB0B6">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

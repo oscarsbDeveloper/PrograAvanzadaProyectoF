@@ -1,0 +1,59 @@
+﻿@model IEnumerable<videogamescr.Models.CATALOGO_JUEGOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_JUEGO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLATAFORMA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRECIO_JUEGO)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_JUEGO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORIA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLATAFORMA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPCION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRECIO_JUEGO)
+        </td>
+    
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_CATALOGO_JUEGO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_CATALOGO_JUEGO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_CATALOGO_JUEGO })
+        </td>
+    </tr>
+}
+
+</table>

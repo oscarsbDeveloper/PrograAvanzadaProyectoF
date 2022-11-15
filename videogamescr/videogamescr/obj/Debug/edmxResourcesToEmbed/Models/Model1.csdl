@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gamestorecrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AYUDA_CLIENTES">
+    <Key>
+      <PropertyRef Name="ID_AYUDA" />
+    </Key>
+    <Property Name="ID_AYUDA" Type="Int32" Nullable="false" />
+    <Property Name="TITULO_ASUNTO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MENSAJE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLIENTES" Relationship="Self.FK__AYUDA_CLI__ID_CL__3B75D760" FromRole="AYUDA_CLIENTES" ToRole="CLIENTES" />
+  </EntityType>
+  <EntityType Name="CATALOGO_ACCESORIOS">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO_ACCESORIO" />
+    </Key>
+    <Property Name="ID_CATALOGO_ACCESORIO" Type="Int32" Nullable="false" />
+    <Property Name="NOM_ACCESORIO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MARCA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRECIO_ACCESORIO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="Self.FK__CATALOGO___ID_PR__38996AB5" FromRole="CATALOGO_ACCESORIOS" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="CATALOGO_CONSOLAS">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO_CONSOLA" />
+    </Key>
+    <Property Name="ID_CATALOGO_CONSOLA" Type="Int32" Nullable="false" />
+    <Property Name="NOM_CONSOLA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MARCA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRECIO_CONSOLA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="Self.FK__CATALOGO___ID_PR__3A81B327" FromRole="CATALOGO_CONSOLAS" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="CATALOGO_JUEGOS">
+    <Key>
+      <PropertyRef Name="ID_CATALOGO_JUEGO" />
+    </Key>
+    <Property Name="ID_CATALOGO_JUEGO" Type="Int32" Nullable="false" />
+    <Property Name="NOM_JUEGO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CATEGORIA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PLATAFORMA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRECIO_JUEGO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="Self.FK__CATALOGO___ID_PR__398D8EEE" FromRole="CATALOGO_JUEGOS" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="CLIENTES">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="NOM_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDO_CLIENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CORREO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AYUDA_CLIENTES" Relationship="Self.FK__AYUDA_CLI__ID_CL__3B75D760" FromRole="CLIENTES" ToRole="AYUDA_CLIENTES" />
+    <NavigationProperty Name="FACTURAS" Relationship="Self.FK__FACTURAS__ID_CLI__3C69FB99" FromRole="CLIENTES" ToRole="FACTURAS" />
+    <NavigationProperty Name="VENTAS" Relationship="Self.FK__VENTAS__ID_CLIEN__403A8C7D" FromRole="CLIENTES" ToRole="VENTAS" />
+  </EntityType>
+  <EntityType Name="EMPLEADOS">
+    <Key>
+      <PropertyRef Name="ID_EMPLEADO" />
+    </Key>
+    <Property Name="ID_EMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="NOM_EMPLEADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDO_EMPLEADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PUESTO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="FACTURAS" Relationship="Self.FK__FACTURAS__ID_EMP__3D5E1FD2" FromRole="EMPLEADOS" ToRole="FACTURAS" />
+    <NavigationProperty Name="NOSOTROS" Relationship="Self.FK__NOSOTROS__ID_EMP__4316F928" FromRole="EMPLEADOS" ToRole="NOSOTROS" />
+    <NavigationProperty Name="VENTAS" Relationship="Self.FK__VENTAS__ID_EMPLE__4222D4EF" FromRole="EMPLEADOS" ToRole="VENTAS" />
+  </EntityType>
+  <EntityType Name="FACTURAS">
+    <Key>
+      <PropertyRef Name="ID_FACTURAS" />
+    </Key>
+    <Property Name="ID_FACTURAS" Type="Int32" Nullable="false" />
+    <Property Name="NUM_FACTURA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_EMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_VENTA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLIENTES" Relationship="Self.FK__FACTURAS__ID_CLI__3C69FB99" FromRole="FACTURAS" ToRole="CLIENTES" />
+    <NavigationProperty Name="EMPLEADOS" Relationship="Self.FK__FACTURAS__ID_EMP__3D5E1FD2" FromRole="FACTURAS" ToRole="EMPLEADOS" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="Self.FK__FACTURAS__ID_PRO__3E52440B" FromRole="FACTURAS" ToRole="PRODUCTOS" />
+    <NavigationProperty Name="VENTAS" Relationship="Self.FK__FACTURAS__ID_VEN__3F466844" FromRole="FACTURAS" ToRole="VENTAS" />
+  </EntityType>
+  <EntityType Name="NOSOTROS">
+    <Key>
+      <PropertyRef Name="ID_NOSOTROS" />
+    </Key>
+    <Property Name="ID_NOSOTROS" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_EMPLEADO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EMPLEADOS" Relationship="Self.FK__NOSOTROS__ID_EMP__4316F928" FromRole="NOSOTROS" ToRole="EMPLEADOS" />
+  </EntityType>
+  <EntityType Name="NOTICIAS">
+    <Key>
+      <PropertyRef Name="ID_NOTICIAS" />
+    </Key>
+    <Property Name="ID_NOTICIAS" Type="Int32" Nullable="false" />
+    <Property Name="TITULO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="Self.FK__NOTICIAS__ID_PRO__37A5467C" FromRole="NOTICIAS" ToRole="PRODUCTOS" />
+  </EntityType>
+  <EntityType Name="PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PRODUCTO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PLATAFORMA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CATALOGO_ACCESORIOS" Relationship="Self.FK__CATALOGO___ID_PR__38996AB5" FromRole="PRODUCTOS" ToRole="CATALOGO_ACCESORIOS" />
+    <NavigationProperty Name="CATALOGO_CONSOLAS" Relationship="Self.FK__CATALOGO___ID_PR__3A81B327" FromRole="PRODUCTOS" ToRole="CATALOGO_CONSOLAS" />
+    <NavigationProperty Name="CATALOGO_JUEGOS" Relationship="Self.FK__CATALOGO___ID_PR__398D8EEE" FromRole="PRODUCTOS" ToRole="CATALOGO_JUEGOS" />
+    <NavigationProperty Name="FACTURAS" Relationship="Self.FK__FACTURAS__ID_PRO__3E52440B" FromRole="PRODUCTOS" ToRole="FACTURAS" />
+    <NavigationProperty Name="NOTICIAS" Relationship="Self.FK__NOTICIAS__ID_PRO__37A5467C" FromRole="PRODUCTOS" ToRole="NOTICIAS" />
+    <NavigationProperty Name="VENTAS" Relationship="Self.FK__VENTAS__ID_PRODU__412EB0B6" FromRole="PRODUCTOS" ToRole="VENTAS" />
+  </EntityType>
+  <EntityType Name="VENTAS">
+    <Key>
+      <PropertyRef Name="ID_VENTA" />
+    </Key>
+    <Property Name="ID_VENTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MONTO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="ID_EMPLEADO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLIENTES" Relationship="Self.FK__VENTAS__ID_CLIEN__403A8C7D" FromRole="VENTAS" ToRole="CLIENTES" />
+    <NavigationProperty Name="EMPLEADOS" Relationship="Self.FK__VENTAS__ID_EMPLE__4222D4EF" FromRole="VENTAS" ToRole="EMPLEADOS" />
+    <NavigationProperty Name="FACTURAS" Relationship="Self.FK__FACTURAS__ID_VEN__3F466844" FromRole="VENTAS" ToRole="FACTURAS" />
+    <NavigationProperty Name="PRODUCTOS" Relationship="Self.FK__VENTAS__ID_PRODU__412EB0B6" FromRole="VENTAS" ToRole="PRODUCTOS" />
+  </EntityType>
+  <Association Name="FK__AYUDA_CLI__ID_CL__3B75D760">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+    <End Role="AYUDA_CLIENTES" Type="Self.AYUDA_CLIENTES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="AYUDA_CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CATALOGO___ID_PR__38996AB5">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="CATALOGO_ACCESORIOS" Type="Self.CATALOGO_ACCESORIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="CATALOGO_ACCESORIOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CATALOGO___ID_PR__3A81B327">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="CATALOGO_CONSOLAS" Type="Self.CATALOGO_CONSOLAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="CATALOGO_CONSOLAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CATALOGO___ID_PR__398D8EEE">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="CATALOGO_JUEGOS" Type="Self.CATALOGO_JUEGOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="CATALOGO_JUEGOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_CLI__3C69FB99">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__ID_CLIEN__403A8C7D">
+    <End Role="CLIENTES" Type="Self.CLIENTES" Multiplicity="1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_EMP__3D5E1FD2">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NOSOTROS__ID_EMP__4316F928">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="NOSOTROS" Type="Self.NOSOTROS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Principal>
+      <Dependent Role="NOSOTROS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__ID_EMPLE__4222D4EF">
+    <End Role="EMPLEADOS" Type="Self.EMPLEADOS" Multiplicity="1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EMPLEADOS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="ID_EMPLEADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_PRO__3E52440B">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FACTURAS__ID_VEN__3F466844">
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="1" />
+    <End Role="FACTURAS" Type="Self.FACTURAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VENTAS">
+        <PropertyRef Name="ID_VENTA" />
+      </Principal>
+      <Dependent Role="FACTURAS">
+        <PropertyRef Name="ID_VENTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NOTICIAS__ID_PRO__37A5467C">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="NOTICIAS" Type="Self.NOTICIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="NOTICIAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VENTAS__ID_PRODU__412EB0B6">
+    <End Role="PRODUCTOS" Type="Self.PRODUCTOS" Multiplicity="1" />
+    <End Role="VENTAS" Type="Self.VENTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTOS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Principal>
+      <Dependent Role="VENTAS">
+        <PropertyRef Name="ID_PRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="gamestorecrEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AYUDA_CLIENTES" EntityType="Self.AYUDA_CLIENTES" />
+    <EntitySet Name="CATALOGO_ACCESORIOS" EntityType="Self.CATALOGO_ACCESORIOS" />
+    <EntitySet Name="CATALOGO_CONSOLAS" EntityType="Self.CATALOGO_CONSOLAS" />
+    <EntitySet Name="CATALOGO_JUEGOS" EntityType="Self.CATALOGO_JUEGOS" />
+    <EntitySet Name="CLIENTES" EntityType="Self.CLIENTES" />
+    <EntitySet Name="EMPLEADOS" EntityType="Self.EMPLEADOS" />
+    <EntitySet Name="FACTURAS" EntityType="Self.FACTURAS" />
+    <EntitySet Name="NOSOTROS" EntityType="Self.NOSOTROS" />
+    <EntitySet Name="NOTICIAS" EntityType="Self.NOTICIAS" />
+    <EntitySet Name="PRODUCTOS" EntityType="Self.PRODUCTOS" />
+    <EntitySet Name="VENTAS" EntityType="Self.VENTAS" />
+    <AssociationSet Name="FK__AYUDA_CLI__ID_CL__3B75D760" Association="Self.FK__AYUDA_CLI__ID_CL__3B75D760">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="AYUDA_CLIENTES" EntitySet="AYUDA_CLIENTES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CATALOGO___ID_PR__38996AB5" Association="Self.FK__CATALOGO___ID_PR__38996AB5">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="CATALOGO_ACCESORIOS" EntitySet="CATALOGO_ACCESORIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CATALOGO___ID_PR__3A81B327" Association="Self.FK__CATALOGO___ID_PR__3A81B327">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="CATALOGO_CONSOLAS" EntitySet="CATALOGO_CONSOLAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CATALOGO___ID_PR__398D8EEE" Association="Self.FK__CATALOGO___ID_PR__398D8EEE">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="CATALOGO_JUEGOS" EntitySet="CATALOGO_JUEGOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_CLI__3C69FB99" Association="Self.FK__FACTURAS__ID_CLI__3C69FB99">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__ID_CLIEN__403A8C7D" Association="Self.FK__VENTAS__ID_CLIEN__403A8C7D">
+      <End Role="CLIENTES" EntitySet="CLIENTES" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_EMP__3D5E1FD2" Association="Self.FK__FACTURAS__ID_EMP__3D5E1FD2">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NOSOTROS__ID_EMP__4316F928" Association="Self.FK__NOSOTROS__ID_EMP__4316F928">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="NOSOTROS" EntitySet="NOSOTROS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__ID_EMPLE__4222D4EF" Association="Self.FK__VENTAS__ID_EMPLE__4222D4EF">
+      <End Role="EMPLEADOS" EntitySet="EMPLEADOS" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_PRO__3E52440B" Association="Self.FK__FACTURAS__ID_PRO__3E52440B">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FACTURAS__ID_VEN__3F466844" Association="Self.FK__FACTURAS__ID_VEN__3F466844">
+      <End Role="VENTAS" EntitySet="VENTAS" />
+      <End Role="FACTURAS" EntitySet="FACTURAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NOTICIAS__ID_PRO__37A5467C" Association="Self.FK__NOTICIAS__ID_PRO__37A5467C">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="NOTICIAS" EntitySet="NOTICIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VENTAS__ID_PRODU__412EB0B6" Association="Self.FK__VENTAS__ID_PRODU__412EB0B6">
+      <End Role="PRODUCTOS" EntitySet="PRODUCTOS" />
+      <End Role="VENTAS" EntitySet="VENTAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

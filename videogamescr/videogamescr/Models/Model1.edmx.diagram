@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c4299b00be44426bac971e496de2e23f" Name="Diagram1">
+        <EntityTypeShape EntityType="gamestorecrModel.AYUDA_CLIENTES" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.CATALOGO_ACCESORIOS" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.CATALOGO_CONSOLAS" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.CATALOGO_JUEGOS" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.CLIENTES" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.EMPLEADOS" Width="1.5" PointX="3.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.FACTURAS" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.NOSOTROS" Width="1.5" PointX="6" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.NOTICIAS" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.PRODUCTOS" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="gamestorecrModel.VENTAS" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <AssociationConnector Association="gamestorecrModel.FK__AYUDA_CLI__ID_CL__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__CATALOGO___ID_PR__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__CATALOGO___ID_PR__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__CATALOGO___ID_PR__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__FACTURAS__ID_CLI__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__VENTAS__ID_CLIEN__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__FACTURAS__ID_EMP__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__NOSOTROS__ID_EMP__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__VENTAS__ID_EMPLE__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__FACTURAS__ID_PRO__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__FACTURAS__ID_VEN__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__NOTICIAS__ID_PRO__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="gamestorecrModel.FK__VENTAS__ID_PRODU__412EB0B6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

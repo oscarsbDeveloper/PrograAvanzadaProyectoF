@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gamestorecrModelStoreContainer" CdmEntityContainer="gamestorecrEntities">
+    <EntitySetMapping Name="AYUDA_CLIENTES">
+      <EntityTypeMapping TypeName="gamestorecrModel.AYUDA_CLIENTES">
+        <MappingFragment StoreEntitySet="AYUDA_CLIENTES">
+          <ScalarProperty Name="ID_AYUDA" ColumnName="ID_AYUDA" />
+          <ScalarProperty Name="TITULO_ASUNTO" ColumnName="TITULO_ASUNTO" />
+          <ScalarProperty Name="MENSAJE" ColumnName="MENSAJE" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATALOGO_ACCESORIOS">
+      <EntityTypeMapping TypeName="gamestorecrModel.CATALOGO_ACCESORIOS">
+        <MappingFragment StoreEntitySet="CATALOGO_ACCESORIOS">
+          <ScalarProperty Name="ID_CATALOGO_ACCESORIO" ColumnName="ID_CATALOGO_ACCESORIO" />
+          <ScalarProperty Name="NOM_ACCESORIO" ColumnName="NOM_ACCESORIO" />
+          <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PRECIO_ACCESORIO" ColumnName="PRECIO_ACCESORIO" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATALOGO_CONSOLAS">
+      <EntityTypeMapping TypeName="gamestorecrModel.CATALOGO_CONSOLAS">
+        <MappingFragment StoreEntitySet="CATALOGO_CONSOLAS">
+          <ScalarProperty Name="ID_CATALOGO_CONSOLA" ColumnName="ID_CATALOGO_CONSOLA" />
+          <ScalarProperty Name="NOM_CONSOLA" ColumnName="NOM_CONSOLA" />
+          <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PRECIO_CONSOLA" ColumnName="PRECIO_CONSOLA" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CATALOGO_JUEGOS">
+      <EntityTypeMapping TypeName="gamestorecrModel.CATALOGO_JUEGOS">
+        <MappingFragment StoreEntitySet="CATALOGO_JUEGOS">
+          <ScalarProperty Name="ID_CATALOGO_JUEGO" ColumnName="ID_CATALOGO_JUEGO" />
+          <ScalarProperty Name="NOM_JUEGO" ColumnName="NOM_JUEGO" />
+          <ScalarProperty Name="CATEGORIA" ColumnName="CATEGORIA" />
+          <ScalarProperty Name="PLATAFORMA" ColumnName="PLATAFORMA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="PRECIO_JUEGO" ColumnName="PRECIO_JUEGO" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTES">
+      <EntityTypeMapping TypeName="gamestorecrModel.CLIENTES">
+        <MappingFragment StoreEntitySet="CLIENTES">
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="NOM_CLIENTE" ColumnName="NOM_CLIENTE" />
+          <ScalarProperty Name="APELLIDO_CLIENTE" ColumnName="APELLIDO_CLIENTE" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLEADOS">
+      <EntityTypeMapping TypeName="gamestorecrModel.EMPLEADOS">
+        <MappingFragment StoreEntitySet="EMPLEADOS">
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="NOM_EMPLEADO" ColumnName="NOM_EMPLEADO" />
+          <ScalarProperty Name="APELLIDO_EMPLEADO" ColumnName="APELLIDO_EMPLEADO" />
+          <ScalarProperty Name="PUESTO" ColumnName="PUESTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACTURAS">
+      <EntityTypeMapping TypeName="gamestorecrModel.FACTURAS">
+        <MappingFragment StoreEntitySet="FACTURAS">
+          <ScalarProperty Name="ID_FACTURAS" ColumnName="ID_FACTURAS" />
+          <ScalarProperty Name="NUM_FACTURA" ColumnName="NUM_FACTURA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_VENTA" ColumnName="ID_VENTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOSOTROS">
+      <EntityTypeMapping TypeName="gamestorecrModel.NOSOTROS">
+        <MappingFragment StoreEntitySet="NOSOTROS">
+          <ScalarProperty Name="ID_NOSOTROS" ColumnName="ID_NOSOTROS" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTICIAS">
+      <EntityTypeMapping TypeName="gamestorecrModel.NOTICIAS">
+        <MappingFragment StoreEntitySet="NOTICIAS">
+          <ScalarProperty Name="ID_NOTICIAS" ColumnName="ID_NOTICIAS" />
+          <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOS">
+      <EntityTypeMapping TypeName="gamestorecrModel.PRODUCTOS">
+        <MappingFragment StoreEntitySet="PRODUCTOS">
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="TIPO_PRODUCTO" ColumnName="TIPO_PRODUCTO" />
+          <ScalarProperty Name="PLATAFORMA" ColumnName="PLATAFORMA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VENTAS">
+      <EntityTypeMapping TypeName="gamestorecrModel.VENTAS">
+        <MappingFragment StoreEntitySet="VENTAS">
+          <ScalarProperty Name="ID_VENTA" ColumnName="ID_VENTA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
