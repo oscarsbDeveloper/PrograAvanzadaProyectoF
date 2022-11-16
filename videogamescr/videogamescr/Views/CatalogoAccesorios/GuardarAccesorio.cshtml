@@ -1,0 +1,81 @@
+﻿@model videogamescr.Models.CATALOGO_ACCESORIOS
+@{
+    ViewBag.Title = "GuardarAccesorio";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>GuardarAccesorio</h2>
+
+
+@using (Html.BeginForm("Guardar", "CatalogoAccesorios", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>CATALOGO_ACCESORIOS</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            @Html.LabelFor(model => model.ID_CATALOGO_ACCESORIO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_CATALOGO_ACCESORIO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_CATALOGO_ACCESORIO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            @Html.LabelFor(model => model.NOM_ACCESORIO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NOM_ACCESORIO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NOM_ACCESORIO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            @Html.LabelFor(model => model.MARCA, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MARCA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MARCA, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            @Html.LabelFor(model => model.PRECIO_ACCESORIO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PRECIO_ACCESORIO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PRECIO_ACCESORIO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            @Html.LabelFor(model => model.ID_PRODUCTO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_PRODUCTO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_PRODUCTO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" action="~/gamestorecr/Guardar" method="post">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

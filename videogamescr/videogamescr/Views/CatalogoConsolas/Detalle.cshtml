@@ -1,0 +1,50 @@
+﻿@model videogamescr.Models.CATALOGO_CONSOLAS
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>CATALOGO_JUEGOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_CONSOLA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_CONSOLA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRECIO_CONSOLA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRECIO_CONSOLA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Modificar", new { id = Model.ID_CATALOGO_CONSOLA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

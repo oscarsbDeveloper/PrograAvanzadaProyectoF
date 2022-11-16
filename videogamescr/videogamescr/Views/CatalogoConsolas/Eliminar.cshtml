@@ -1,0 +1,56 @@
+﻿@model videogamescr.Models.CATALOGO_CONSOLAS
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CATALOGO_JUEGOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_CONSOLA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_CONSOLA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRECIO_CONSOLA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRECIO_CONSOLA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>}
+</div>

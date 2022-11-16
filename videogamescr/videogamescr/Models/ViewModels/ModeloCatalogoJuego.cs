@@ -10,9 +10,11 @@ namespace videogamescr.Models.ViewModels
     public class ModeloCatalogoJuego
     {
         //=======================================================
+       
+       
+        [Display(Name = "Id Juegos")]
         [Required(ErrorMessage = "Debe digitar el id del juego")]
         [IdJuegoExiste]
-        [Display(Name = "Id Juegos")]
         public int ID_CATALOGO_JUEGO { get; set; }
 
         //===========================================================

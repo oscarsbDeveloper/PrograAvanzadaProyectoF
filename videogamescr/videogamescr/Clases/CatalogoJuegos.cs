@@ -11,9 +11,9 @@ namespace videogamescr.Clases
         //===========================================================
         //   Metodo para consultar los datos del Modelo de la BD
         //===========================================================
-        public IEnumerable<CATALOGO_JUEGOS>Consultar()
+        public IEnumerable<CATALOGO_JUEGOS> Consultar()
         {
-            using(gamestorecrEntities db = new gamestorecrEntities())
+            using (gamestorecrEntities db = new gamestorecrEntities())
             {
                 return db.CATALOGO_JUEGOS.ToList();
             }

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.32802.440
+VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "videogamescr", "videogamescr\videogamescr.csproj", "{2B7982EB-94A8-4B63-82DC-5889225FC3AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "videogamescr", "videogamescr\videogamescr.csproj", "{C1ABA85C-CE2C-4E31-9DF6-04F2C3994718}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B7982EB-94A8-4B63-82DC-5889225FC3AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B7982EB-94A8-4B63-82DC-5889225FC3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B7982EB-94A8-4B63-82DC-5889225FC3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B7982EB-94A8-4B63-82DC-5889225FC3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1ABA85C-CE2C-4E31-9DF6-04F2C3994718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1ABA85C-CE2C-4E31-9DF6-04F2C3994718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1ABA85C-CE2C-4E31-9DF6-04F2C3994718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1ABA85C-CE2C-4E31-9DF6-04F2C3994718}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {396EA69D-C446-4589-9664-36A35783753E}
+		SolutionGuid = {5F7DB9BE-4D38-4344-926D-B2DE12159D3F}
 	EndGlobalSection
 EndGlobal

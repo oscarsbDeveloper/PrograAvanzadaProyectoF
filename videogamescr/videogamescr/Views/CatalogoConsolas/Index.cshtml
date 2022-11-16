@@ -1,0 +1,55 @@
+﻿@model IEnumerable<videogamescr.Models.CATALOGO_CONSOLAS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_CONSOLA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MARCA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRECIO_CONSOLA)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOM_CONSOLA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MARCA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DESCRIPCION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRECIO_CONSOLA)
+            </td>
+
+            <td>
+                @Html.ActionLink("Editar", "Modificar", new { id = item.ID_CATALOGO_CONSOLA }) |
+                @Html.ActionLink("Details", "Detalle", new { id = item.ID_CATALOGO_CONSOLA }) |
+                @Html.ActionLink("Delete", "Eliminar", new { id = item.ID_CATALOGO_CONSOLA })
+            </td>
+        </tr>
+}
+
+</table>

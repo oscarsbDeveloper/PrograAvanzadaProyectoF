@@ -8,7 +8,7 @@ using videogamescr.Clases;
 
 namespace videogamescr.Controllers
 {
-    
+
     public class CatalogoJuegosController : Controller
     {
         gamestorecrEntities db = new gamestorecrEntities();
@@ -82,7 +82,7 @@ namespace videogamescr.Controllers
         {
             cj.Modificar(modelo);
             ViewBag.Mensaje = "El juego se modifico correctamente";
-            return View("Modificar",modelo);
+            return View("Modificar", modelo);
         }
 
         //====================================================
