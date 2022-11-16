@@ -65,5 +65,47 @@ namespace videogamescr.Controllers
             return RedirectToAction("Exito", model);
         }
 
+        //================================================
+        //Metodo para consultar el dato que se va a editar
+        //================================================
+        public ActionResult Modificar(int id)
+        {
+            CATALOGO_JUEGOS modelo = cj.Consultar(id);
+            ViewBag.Mensaje = "";
+            return View(modelo);
+        }
+
+        //================================================================
+        //Metodo para editar el dato que se consulto en el metodo anterior
+        //================================================================
+        public ActionResult Cambiar(CATALOGO_JUEGOS modelo)
+        {
+            cj.Modificar(modelo);
+            ViewBag.Mensaje = "El juego se modifico correctamente";
+            return View("Modificar",modelo);
+        }
+
+        //====================================================
+        //Metodo para consultar la linea seleccionada de datos
+        //====================================================
+        public ActionResult Detalle(int id)
+        {
+            CATALOGO_JUEGOS modelo = cj.Consultar(id);
+            return View(modelo);
+        }
+
+        public ActionResult Eliminar(int id)
+        {
+            CATALOGO_JUEGOS modelo = new CATALOGO_JUEGOS()
+            {
+                ID_CATALOGO_JUEGO = id
+            };
+            cj.Eliminar(modelo);
+            ViewBag.Mensaje = "El Juego se elimino correctamente";
+            IEnumerable<CATALOGO_JUEGOS> lst = cj.Consultar();
+            return View("Index", lst);
+
+        }
+
     }
 }

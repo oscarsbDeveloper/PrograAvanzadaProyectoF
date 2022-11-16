@@ -194,6 +194,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\img01.jpeg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -242,6 +243,9 @@
     <Content Include="Views\Shared\_MiLayout.cshtml" />
     <Content Include="Views\CatalogoJuegos\Exito.cshtml" />
     <Content Include="Views\CatalogoJuegos\GuardarJuego.cshtml" />
+    <Content Include="Views\CatalogoJuegos\Modificar.cshtml" />
+    <Content Include="Views\CatalogoJuegos\Detalle.cshtml" />
+    <Content Include="Views\CatalogoJuegos\Eliminar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
