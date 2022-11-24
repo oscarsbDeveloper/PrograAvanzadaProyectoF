@@ -1,0 +1,46 @@
+﻿@model IEnumerable<videogamescr.Models.AYUDA_CLIENTES>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TITULO_ASUNTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MENSAJE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENTES.NOM_CLIENTE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TITULO_ASUNTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MENSAJE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENTES.NOM_CLIENTE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_AYUDA }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_AYUDA }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_AYUDA })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,67 +1,127 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using videogamescr.Models;
-using videogamescr.Clases;
 
 namespace videogamescr.Controllers
 {
-    public class EmpleadosController : Controller
+    public class EMPLEADOSController : Controller
     {
-        // GET: Empleados
+        private gamestorecrEntities db = new gamestorecrEntities();
 
-        Employee employee = new Employee();
+        // GET: EMPLEADOS
         public ActionResult Index()
         {
-            IEnumerable<EMPLEADOS> lst = employee.Consultar();
-            return View(lst);
+            return View(db.EMPLEADOS.ToList());
         }
 
-        public ActionResult Guardar(EMPLEADOS modelo)
+        // GET: EMPLEADOS/Details/5
+        public ActionResult Details(int? id)
         {
-            ViewBag.Mensaje = "";
-
-            return View(modelo);
-        }
-
-        public ActionResult Nuevo(EMPLEADOS modelo)
-        {
-            employee.Guardar(modelo);
-            ViewBag.Mensaje = "El empleado se agrego correctamente,";
-            return View("Guardar", modelo);
-        }
-        public ActionResult Modificar(int id)
-        {
-            EMPLEADOS modelo = employee.Consultar(id);
-            ViewBag.Mensaje = "";
-            return View(modelo);
-        }
-        public ActionResult Cambiar(EMPLEADOS modelo)
-        {
-            employee.Modificar(modelo);
-            ViewBag.Mensaje = "El empleado se modifico correctamente.";
-            return View("Modificar", modelo);
-        }
-        public ActionResult Detalle(int id)
-        {
-            EMPLEADOS modelo = employee.Consultar(id);
-            return View(modelo);
-        }
-
-        public ActionResult Eliminar(int id)
-        {
-            EMPLEADOS modelo = new EMPLEADOS()
+            if (id == null)
             {
-                ID_EMPLEADO = id
-            };
-            employee.Eliminar(modelo);
-            ViewBag.Mensaje = "El empleado se elimino correctamente.";
-            IEnumerable<EMPLEADOS> lst = employee.Consultar();
-            return View("Index", lst);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EMPLEADOS eMPLEADOS = db.EMPLEADOS.Find(id);
+            if (eMPLEADOS == null)
+            {
+                return HttpNotFound();
+            }
+            return View(eMPLEADOS);
         }
 
+        // GET: EMPLEADOS/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        // POST: EMPLEADOS/Create
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
+        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "ID_EMPLEADO,NOM_EMPLEADO,APELLIDO_EMPLEADO,PUESTO")] EMPLEADOS eMPLEADOS)
+        {
+            if (ModelState.IsValid)
+            {
+                db.EMPLEADOS.Add(eMPLEADOS);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(eMPLEADOS);
+        }
+
+        // GET: EMPLEADOS/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EMPLEADOS eMPLEADOS = db.EMPLEADOS.Find(id);
+            if (eMPLEADOS == null)
+            {
+                return HttpNotFound();
+            }
+            return View(eMPLEADOS);
+        }
+
+        // POST: EMPLEADOS/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
+        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "ID_EMPLEADO,NOM_EMPLEADO,APELLIDO_EMPLEADO,PUESTO")] EMPLEADOS eMPLEADOS)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(eMPLEADOS).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(eMPLEADOS);
+        }
+
+        // GET: EMPLEADOS/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            EMPLEADOS eMPLEADOS = db.EMPLEADOS.Find(id);
+            if (eMPLEADOS == null)
+            {
+                return HttpNotFound();
+            }
+            return View(eMPLEADOS);
+        }
+
+        // POST: EMPLEADOS/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            EMPLEADOS eMPLEADOS = db.EMPLEADOS.Find(id);
+            db.EMPLEADOS.Remove(eMPLEADOS);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

@@ -1,0 +1,43 @@
+﻿@model videogamescr.Models.EMPLEADOS
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EMPLEADOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOM_EMPLEADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOM_EMPLEADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APELLIDO_EMPLEADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APELLIDO_EMPLEADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PUESTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PUESTO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_EMPLEADO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

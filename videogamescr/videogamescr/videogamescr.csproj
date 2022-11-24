@@ -132,12 +132,13 @@
     <Compile Include="Clases\CatalogoConsolas.cs" />
     <Compile Include="Clases\CatalogoJuegos.cs" />
     <Compile Include="Clases\Employee.cs" />
+    <Compile Include="Controllers\AYUDA_CLIENTESController.cs" />
     <Compile Include="Controllers\CatalogoAccesoriosController.cs" />
     <Compile Include="Controllers\CatalogoConsolasController.cs" />
     <Compile Include="Controllers\CatalogoJuegosController.cs" />
-    <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\EMPLEADOSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\PRODUCTOSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +274,16 @@
     <Content Include="Views\Productos\Details.cshtml" />
     <Content Include="Views\Productos\Edit.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\EMPLEADOS\Create.cshtml" />
+    <Content Include="Views\EMPLEADOS\Delete.cshtml" />
+    <Content Include="Views\EMPLEADOS\Details.cshtml" />
+    <Content Include="Views\EMPLEADOS\Edit.cshtml" />
+    <Content Include="Views\EMPLEADOS\Index.cshtml" />
+    <Content Include="Views\AYUDA_CLIENTES\Create.cshtml" />
+    <Content Include="Views\AYUDA_CLIENTES\Delete.cshtml" />
+    <Content Include="Views\AYUDA_CLIENTES\Details.cshtml" />
+    <Content Include="Views\AYUDA_CLIENTES\Edit.cshtml" />
+    <Content Include="Views\AYUDA_CLIENTES\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
