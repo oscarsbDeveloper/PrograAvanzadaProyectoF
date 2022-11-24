@@ -1,0 +1,42 @@
+﻿@model videogamescr.Models.PRODUCTOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PRODUCTOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TIPO_PRODUCTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIPO_PRODUCTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PLATAFORMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PLATAFORMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPCION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPCION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PRODUCTO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
