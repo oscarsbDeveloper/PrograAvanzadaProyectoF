@@ -1,0 +1,43 @@
+﻿@model videogamescr.Models.AYUDA_CLIENTES
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MiLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AYUDA_CLIENTES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TITULO_ASUNTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITULO_ASUNTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MENSAJE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MENSAJE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLIENTES.NOM_CLIENTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLIENTES.NOM_CLIENTE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_AYUDA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
